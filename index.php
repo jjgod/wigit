@@ -104,7 +104,7 @@
 		return "";
 	}
 
-	function git($command, &$output = "") {
+	function git($command, $output = "") {
 		global $GIT, $DATA_DIR;
 
 		$gitDir = dirname(__FILE__) . "/$DATA_DIR/.git";
@@ -309,7 +309,8 @@
 		}
 	}
 	// Get operation
-	else {
+    else {
+        header("Content-Type: text/html;charset=utf-8");
 		// Global history
 		if ($wikiPage == "history") {
 			$wikiHistory = getGitHistory();
