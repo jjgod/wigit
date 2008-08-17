@@ -6,7 +6,8 @@
 	 * See COPYING for details
 	 */
 
-	require_once('classTextile.php');
+	require_once('markdown.php');
+	require_once('smartypants.php');
 
 	// --------------------------------------------------------------------------
 	// Configuration
@@ -22,8 +23,8 @@
 	if (!isset($DATA_DIR)) { $DATA_DIR = "data"; }
 	if (!isset($DEFAULT_PAGE)) { $DEFAULT_PAGE = "Home"; }
 	if (!isset($DEFAULT_AUTHOR)) { $DEFAULT_AUTHOR = 'Anonymous <anonymous@wigit>'; }
-  if (!isset($AUTHORS)) { $AUTHORS = array(); }
-  if (!isset($THEME)) { $THEME = "default"; }
+    if (!isset($AUTHORS)) { $AUTHORS = array(); }
+    if (!isset($THEME)) { $THEME = "default"; }
 
 
 	// --------------------------------------------------------------------------
@@ -140,12 +141,12 @@
 
 		$matches = array();
 		$page = "";
-		$type = "";
-		if (ereg("/(.*)/(.*)", $resource, $matches)) {
+        $type = "";
+		if (ereg("(.*)/(.*)", $resource, $matches)) {
 			$page = sanitizeName($matches[1]);
 			$type = $matches[2];
 		}
-		else if (ereg("/(.*)", $resource, $matches)) {
+		else if (ereg("(.*)", $resource, $matches)) {
 			$page = sanitizeName($matches[1]);
 		}
 		if ($page == "") {
@@ -168,14 +169,14 @@
 		// FIXME: Do not apply this in <pre> and <notextile> blocks.
 
 		// Linkify
-		$text = preg_replace('@([^:])(https?://([-\w\.]+)+(:\d+)?(/([-\w/_\.]*(\?\S+)?)?)?)@', '$1<a href="$2">$2</a>', $text);
+		// $text = preg_replace('@([^:])(https?://([-\w\.]+)+(:\d+)?(/([-\w/_\.]*(\?\S+)?)?)?)@', '$1<a href="$2">$2</a>', $text);
 
 		// WikiLinkify
-		$text = preg_replace('@\[([A-Z]\w+)\]@', '<a href="' . $SCRIPT_URL . '/$1">$1</a>', $text);
+        $text = SmartyPants(Markdown($text));
+        $text = preg_replace('@\[([A-Z]\w+)\]@', '<a href="' . $SCRIPT_URL . '/$1">$1</a>', $text);
 
 		// Textilify
-		$textile = new Textile();
-		return $textile->TextileThis($text);
+		return $text;
 	}
 
 	// --------------------------------------------------------------------------

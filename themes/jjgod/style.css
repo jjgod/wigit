@@ -1,0 +1,63 @@
+html { font: 1em/1.4 "Lucida Grande", Helvetica, sans-serif }
+
+body { 
+       margin: 1em 10%; 
+    max-width: 50em;
+}
+
+p {
+    color: #333;
+}
+
+a {
+              color: rgb(0, 136, 204);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+acronym, abbr, span.caps {
+  cursor: help;
+}
+
+acronym, abbr {
+  border-bottom: 1px dashed #999;
+}
+
+#title {
+    margin: 0;
+}
+
+#footer, #navigation { 
+      font-size: 0.8em;
+     color: gray;
+}
+
+#footer p, #navigation {
+    margin: 0;
+     color: gray;
+}
+
+#history {
+	margin-top: 20pt;
+	margin-bottom: 20pt;
+}
+
+#history table {
+      font-size: 0.8em;
+}
+
+#history td {
+	padding-left: 10pt;
+	padding-right: 10pt;
+}
+
+#history td.author {
+	text-align: center;
+}
+
+#history td.page {
+	text-align: center;
+}
