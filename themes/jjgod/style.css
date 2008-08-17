@@ -2,7 +2,7 @@ html { font: 0.9em/1.4 "Lucida Grande", Helvetica, sans-serif }
 
 body { 
        margin: 1em 10%; 
-    max-width: 50em;
+    max-width: 56em;
 }
 
 p {
@@ -16,6 +16,11 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+textarea {
+      font-size: 1em;
+    font-family: monospace;
 }
 
 acronym, abbr, span.caps {
