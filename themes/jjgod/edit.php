@@ -29,7 +29,7 @@
 				code (e.g. <code>&lt;b&gt;Bold&lt;/b&gt;</code>), the following 
 				markup is available as well:
 				<ul>
-					<li><code>[SomePage]</code>: Internal link to SomePage</li>
+					<li><code>[SomePage]</code>, <code>[SomePage|Display Name]</code>: Internal link to SomePage</li>
 					<li><code># Section</code>, <code>## Subsection</code>: 
 						Section headers</li>
 					<li><code>1. Item</code>:

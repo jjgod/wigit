@@ -174,6 +174,7 @@
 		// WikiLinkify
         $text = SmartyPants(Markdown($text));
         $text = preg_replace('@\[([A-Z]\w+)\]@', '<a href="' . $SCRIPT_URL . '/$1">$1</a>', $text);
+        $text = preg_replace('@\[([A-Z]\w+)\|(.+)\]@', '<a href="' . $SCRIPT_URL . '/$1">$2</a>', $text);
 
 		// Textilify
 		return $text;
