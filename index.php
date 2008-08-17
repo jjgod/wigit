@@ -34,7 +34,7 @@
 	function getGitHistory($file = "") {
 		$output = array();
 		// FIXME: Find a better way to find the files that changed than --name-only
-		git("log --name-only --pretty=format:'%H>%T>%an>%ae>%aD>%s' -- $file", $output);
+		gitexec("log --name-only --pretty=format:'%H>%T>%an>%ae>%aD>%s' -- $file", $output);
 		$history = array();
 		$historyItem = array();
 		foreach ($output as $line) {
@@ -102,9 +102,13 @@
 			}
 		}
 		return "";
-	}
+    }
 
-	function git($command, &$output) {
+    function git($command) {
+        return gitexec($command, $emp);
+    }
+
+	function gitexec($command, &$output) {
 		global $GIT, $DATA_DIR;
 
 		$gitDir = dirname(__FILE__) . "/$DATA_DIR/.git";
@@ -352,7 +356,7 @@
 		// Specific version
 		else if (eregi("[0-9A-F]{20,20}", $wikiSubPage)) {
 			$output = array();
-			if (!git("cat-file -p " . $wikiSubPage . ":$wikiPage", $output)) {
+			if (!gitexec("cat-file -p " . $wikiSubPage . ":$wikiPage", $output)) {
 				return;
 			}
 			$wikiContent = wikify(join("\n", $output));
