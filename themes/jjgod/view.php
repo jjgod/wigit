@@ -13,8 +13,6 @@
             </p>
         </div>
 
-        <h1 id="title"><?php print getPage() ?></h1>
-
         <?php print getContent(); ?>
 
 		<div id="footer">

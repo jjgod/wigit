@@ -30,9 +30,10 @@ th {
     background-color: #eee;
 }
 
-#title {
+h1 {
     padding-bottom: 14px;
     border-bottom: 1px solid #ccc;
+    font-size: 1.8em;
 }
 
 #navigation {
