@@ -19,7 +19,6 @@
 		</div>
 
 		<div id="history">
-			<p>
 			<table>
 				<tr><th>Date</th><th>Author</th><th>Page</th><th>Message</th></tr>
 			<?php 
@@ -28,18 +27,15 @@
 						. "<td>" . $item["date"] . "</td>"
 						. "<td class='author'>" . $item["linked-author"] . "</td>"
 						. "<td class='page'><a href=\"" . getViewURL($item["page"]) . "\">" . $item["page"] . "</a></td>"
-						. "<td>" . $item["message"] . "</td>"
-						. "<td>" . "<a href=\"" . getViewURL($item["page"], $item["commit"]) . "\">View</a></td>"
-						. "<td>" . "</td>"
+						. "<td><a href=\"" . getViewURL($item["page"], $item["commit"]) . "\">" . $item["message"] . "</a></td>"
 						. "</tr>\n";
 				}
 			?>
 			</table>
-			</p>
 		</div>
-		<div id="plug">
+		<div id="footer">
 			<p>
-				Powered by <a href="http://el-tramo.be/software/wigit">WiGit</a>
+				Powered by <a href="http://el-tramo.be/software/wigit">WiGit</a>.
 			</p>
 		</div>
 	</body>

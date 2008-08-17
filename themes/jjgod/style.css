@@ -1,4 +1,4 @@
-html { font: 1em/1.4 "Lucida Grande", Helvetica, sans-serif }
+html { font: 0.9em/1.4 "Lucida Grande", Helvetica, sans-serif }
 
 body { 
        margin: 1em 10%; 
@@ -26,13 +26,34 @@ acronym, abbr {
   border-bottom: 1px dashed #999;
 }
 
+th {
+    background-color: #eee;
+}
+
 #title {
-    margin: 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+#navigation {
+      position: relative;
+    text-align: right;
+}
+
+#navigation p {
+      position: absolute;
+      right: 0;
+      top: 5px;
+}
+
+#footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
 }
 
 #footer, #navigation { 
-      font-size: 0.8em;
-     color: gray;
+    font-size: 0.8em;
+        color: gray;
 }
 
 #footer p, #navigation {
@@ -46,7 +67,7 @@ acronym, abbr {
 }
 
 #history table {
-      font-size: 0.8em;
+    font-size: 0.8em;
 }
 
 #history td {

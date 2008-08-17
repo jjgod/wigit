@@ -4,15 +4,17 @@
 		<title><?php print getTitle() ?> &raquo; <?php print getPage() ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php print getCSSURL() ?>" />
 	</head>
-	<body>
-        <h1 id="title"><?php print getPage() ?></h1>
-
-        <p id="navigation">
+    <body>
+        <div id="navigation">
+            <p>
             <a href="<?php print getHomeURL() ?>">Home</a> |
             <a href="<?php print getGlobalHistoryURL() ?>">Changes</a>
                <?php if (getUser() != "") { ?>| Logged in as <?php print getUser(); } ?>
-        </p>
-        
+            </p>
+        </div>
+
+        <h1 id="title"><?php print getPage() ?></h1>
+
         <?php print getContent(); ?>
 
 		<div id="footer">
