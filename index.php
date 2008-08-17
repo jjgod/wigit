@@ -104,7 +104,7 @@
 		return "";
 	}
 
-	function git($command, $output = "") {
+	function git($command, &$output) {
 		global $GIT, $DATA_DIR;
 
 		$gitDir = dirname(__FILE__) . "/$DATA_DIR/.git";
@@ -346,7 +346,7 @@
 		}
 		// History
 		else if ($wikiSubPage == "history") {
-			$wikiHistory = getGitHistory($wikiPage);
+            $wikiHistory = getGitHistory($wikiPage);
 			include(getThemeDir() . "/history.php");
 		}
 		// Specific version
